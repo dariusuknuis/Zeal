@@ -50,6 +50,7 @@
 #include "tooltip.h"
 #include "ui_manager.h"
 #include "zone_map.h"
+#include "sky_uv_guard.h"
 
 // #include "zeal_settings.h"
 // #include "zeal.h"

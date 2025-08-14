@@ -36,6 +36,7 @@ ZealService::ZealService() {
   floating_damage = MakeCheckedShared(FloatingDamage);
   give = MakeCheckedShared(NPCGive);
   game_patches = MakeCheckedShared(Patches);
+  sky_uv_guard = MakeCheckedShared(SkyUVGuard);
   nameplate = MakeCheckedShared(NamePlate);
   tells = MakeCheckedShared(TellWindows);
   helm = MakeCheckedShared(HelmManager);
