@@ -1,30 +1,26 @@
 #pragma once
 #include <cstdint>
+#include <vector>
 #include "hook_wrapper.h"
 #include "memory.h"
 
 class SkyUVGuard {
  public:
-  SkyUVGuard(class ZealService *zeal);
+  SkyUVGuard(class ZealService* zeal);
   ~SkyUVGuard() = default;
-  
+
  private:
-  void Install();
-  // Hooks
-  static void __cdecl hk_t3dInitSky(void* a0 /* adjust if your real proto differs */);
-  static void __cdecl hk_s3dSetMaterialDefUVShiftPerMs(void* matDef, float uPerMs, float vPerMs);
+  // Hook only SetUV and gate by caller.
+  static void __cdecl hk_s3dSetMaterialDefUVShiftPerMs(void* pMatDef,
+                                                       void* pCtx,
+                                                       std::uint32_t uPerMs_bits,
+                                                       std::uint32_t vPerMs_bits);
 
-  // Original types
-  using fn_t3dInitSky = void(__cdecl*)(void*);
-  using fn_s3dSetMaterialDefUVShiftPerMs = void(__cdecl*)(void*, float, float);
+  using fn_s3dSetMaterialDefUVShiftPerMs =
+      void(__cdecl*)(void*, void*, std::uint32_t, std::uint32_t);
 
-  // Resolve targets
-  static std::uint32_t ResolveAddr_InitSky();
-  static std::uint32_t ResolveAddr_SetUV();
-
-  // Static storage (defined in .cpp to avoid link issues)
-  static thread_local bool g_skip_uv;
-  static fn_t3dInitSky                    o_t3dInitSky;
   static fn_s3dSetMaterialDefUVShiftPerMs o_s3dSetUV;
 
+  // All return addresses (one per callsite in t3dInitSky that calls SetUV).
+  static std::vector<std::uintptr_t> s_ret_from_t3dInitSky_calls;
 };

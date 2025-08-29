@@ -285,6 +285,9 @@
     <ClInclude Include="operator_overloads.h">
       <Filter>Header Files\helpers</Filter>
     </ClInclude>
+    <ClInclude Include="sky_uv_guard.h">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -487,6 +490,9 @@
     </ClCompile>
     <ClCompile Include="ui_inspect.cpp">
       <Filter>Source Files\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="sky_uv_guard.cpp">
+      <Filter>Source Files\other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
