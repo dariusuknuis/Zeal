@@ -81,6 +81,7 @@
     <ClInclude Include="helm_manager.h" />
     <ClInclude Include="music.h" />
     <ClInclude Include="sky_uv_guard.h" />
+    <ClInclude Include="render_preset.h" />
     <ClInclude Include="survey.h" />
     <ClInclude Include="tick.h" />
     <ClInclude Include="ui_buff.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="items.cpp" />
     <ClCompile Include="music.cpp" />
     <ClCompile Include="sky_uv_guard.cpp" />
+    <ClCompile Include="render_preset.cpp" />
     <ClCompile Include="survey.cpp" />
     <ClCompile Include="tick.cpp" />
     <ClCompile Include="ui_buff.cpp" />

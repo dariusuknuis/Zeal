@@ -67,6 +67,7 @@ class ZealService {
   std::shared_ptr<ZoneMap> zone_map = nullptr;
   std::shared_ptr<Patches> game_patches = nullptr;
   std::shared_ptr<SkyUVGuard> sky_uv_guard = nullptr;
+  std::shared_ptr<RenderPreset> render_preset = nullptr;
   std::shared_ptr<EntityManager> entity_manager = nullptr;
 
   std::vector<std::string> print_buffer;

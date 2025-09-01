@@ -288,6 +288,9 @@
     <ClInclude Include="sky_uv_guard.h">
       <Filter>Header Files\other</Filter>
     </ClInclude>
+    <ClInclude Include="render_preset.h">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -492,6 +495,9 @@
       <Filter>Source Files\ui</Filter>
     </ClCompile>
     <ClCompile Include="sky_uv_guard.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="render_preset.cpp">
       <Filter>Source Files\other</Filter>
     </ClCompile>
   </ItemGroup>
