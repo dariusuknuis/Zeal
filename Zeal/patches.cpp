@@ -85,6 +85,14 @@ void Patches::SetBrownSkeletons() {
   }
 }
 
+void Patches::SetDropCoins() {
+  if (DropCoins.get()) {
+    mem::write<byte>(0x4ef7a1, 0xEB);
+  } else {
+    mem::write<byte>(0x4ef7a1, 0x75);
+  }
+}
+
 // These patches improve /follow reliability. There is logic in /follow to turn run mode on and off
 // and this actually makes your character crash out of the game if your framerate is high enough.
 // There is also a smooth turning function to circle around to the followed target which is
@@ -133,6 +141,7 @@ Patches::Patches() {
   // disable client sided hp ticking
   // mem::set(0x4b9141, 0x90, 6);
   SetBrownSkeletons();
+  SetDropCoins();
   SyncAutoFollow(true);  // Sync only if non-default.
 
   // fix attack delay in DoPassageOfTime() for ItemTypeMartial (0x2d) by replacing unused type 0xd.

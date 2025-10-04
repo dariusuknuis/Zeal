@@ -431,6 +431,9 @@ void ui_options::InitGeneral() {
   ui->AddCheckboxCallback(wnd, "Zeal_BrownSkeletons", [](Zeal::GameUI::BasicWnd *wnd) {
     ZealService::get_instance()->game_patches->BrownSkeletons.set(wnd->Checked);
   });
+  ui->AddCheckboxCallback(wnd, "Zeal_DropCoins", [](Zeal::GameUI::BasicWnd *wnd) {
+    ZealService::get_instance()->game_patches->DropCoins.set(wnd->Checked);
+  });
   ui->AddCheckboxCallback(wnd, "Zeal_ClassicMusic", [](Zeal::GameUI::BasicWnd *wnd) {
     ZealService::get_instance()->music->ClassicMusic.set(wnd->Checked);
   });
@@ -922,6 +925,7 @@ void ui_options::UpdateOptionsGeneral() {
   ui->SetChecked("Zeal_RecastTimers", ZealService::get_instance()->ui->buffs->RecastTimers.get());
   ui->SetChecked("Zeal_RecastTimersLeftAlign", ZealService::get_instance()->ui->buffs->RecastTimersLeftAlign.get());
   ui->SetChecked("Zeal_BrownSkeletons", ZealService::get_instance()->game_patches->BrownSkeletons.get());
+  ui->SetChecked("Zeal_DropCoins", ZealService::get_instance()->game_patches->DropCoins.get());
   ui->SetChecked("Zeal_ClassicMusic", ZealService::get_instance()->music->ClassicMusic.get());
   ui->SetChecked("Zeal_SuppressMissedNotes",
                  ZealService::get_instance()->chatfilter_hook->setting_suppress_missed_notes.get());
